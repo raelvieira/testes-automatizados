@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02d76606-720a-4e1b-a7ac-1489c00fdbc5" name="Default Changelist" comment="" />
+    <list default="true" id="02d76606-720a-4e1b-a7ac-1489c00fdbc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/israelvieira/repository/EmprestimoRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/israelvieira/repository/EmprestimoRepositoryTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +18,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -22,6 +29,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1Ubcwjm65rFCbx0kYRx2QGsB4uY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,6 +37,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -42,16 +51,35 @@
       <recent name="C:\Users\Suporte\Desktop\emprestimolivros\src\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LivroRepositoryTest.deveRetornarHistoricoEmprestimos">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.teste.Main" />
-      <module name="controle-emprestimo-livros" />
+  <component name="RunManager" selected="JUnit.EmprestimoRepositoryTest.deveTrazerListaComLivrosAtrasados">
+    <configuration name="EmprestimoRepositoryTest.deveTrazerListaComLivrosAtrasados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="emprestimolivros" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.israelvieira.teste.*" />
+          <option name="PATTERN" value="br.com.israelvieira.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
+      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.EmprestimoRepositoryTest" />
+      <option name="METHOD_NAME" value="deveTrazerListaComLivrosAtrasados" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmprestimoRepositoryTest.deveTrazerListaComLivrosEmprestados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="emprestimolivros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.israelvieira.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
+      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.EmprestimoRepositoryTest" />
+      <option name="METHOD_NAME" value="deveTrazerListaComLivrosEmprestados" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -67,22 +95,6 @@
       <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
       <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.LivroRepositoryTest" />
       <option name="METHOD_NAME" value="deveAlterarUmLivro" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LivroRepositoryTest.deveEncontrarLivroPeloNome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="emprestimolivros" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.israelvieira.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
-      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.LivroRepositoryTest" />
-      <option name="METHOD_NAME" value="deveEncontrarLivroPeloNome" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EmprestimoRepositoryTest.deveTrazerListaComLivrosAtrasados" />
+        <item itemvalue="JUnit.EmprestimoRepositoryTest.deveTrazerListaComLivrosEmprestados" />
         <item itemvalue="JUnit.LivroRepositoryTest.deveRetornarHistoricoEmprestimos" />
         <item itemvalue="JUnit.LivroRepositoryTest.deveAlterarUmLivro" />
         <item itemvalue="JUnit.LivroRepositoryTest.deveEncontrarLivroPeloTitulo" />
-        <item itemvalue="JUnit.LivroRepositoryTest.deveEncontrarLivroPeloNome" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -160,21 +172,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="56" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1575682682711" />
-    <state width="1323" height="189" key="GridCell.Tab.0.bottom" timestamp="1575833717317">
+    <state width="1323" height="189" key="GridCell.Tab.0.bottom" timestamp="1575838240618">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575833717317" />
-    <state width="1323" height="189" key="GridCell.Tab.0.center" timestamp="1575833717317">
+    <state width="1323" height="189" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
+    <state width="1323" height="189" key="GridCell.Tab.0.center" timestamp="1575838240618">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575833717317" />
-    <state width="1323" height="189" key="GridCell.Tab.0.left" timestamp="1575833717317">
+    <state width="1323" height="189" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
+    <state width="1323" height="189" key="GridCell.Tab.0.left" timestamp="1575838240618">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575833717317" />
-    <state width="1323" height="189" key="GridCell.Tab.0.right" timestamp="1575833717317">
+    <state width="1323" height="189" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
+    <state width="1323" height="189" key="GridCell.Tab.0.right" timestamp="1575838240618">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575833717317" />
+    <state width="1323" height="189" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
   </component>
 </project>
