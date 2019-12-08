@@ -56,7 +56,7 @@ public class EmprestimoBuilder {
 
 
     public EmprestimoBuilder comValor(BigDecimal valor) {
-        emprestimo.setValorPago(valor);
+        emprestimo.setValorTotal(valor);
         return this;
     }
 
@@ -64,7 +64,7 @@ public class EmprestimoBuilder {
         emprestimo.setDataEmprestimo(LocalDate.now().minusDays(7) );
         emprestimo.setDataPrevista(LocalDate.now().minusDays(6) );
         emprestimo.setDataDevolucao(LocalDate.now().minusDays(6) );
-        emprestimo.setValorPago(new BigDecimal(3.75));
+        emprestimo.setValorTotal(new BigDecimal(3.75));
 
         return this;
     }

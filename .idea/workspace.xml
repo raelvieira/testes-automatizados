@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02d76606-720a-4e1b-a7ac-1489c00fdbc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/israelvieira/modelo/Pagamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/israelvieira/modelo/TipoPagamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/israelvieira/repository/PagamentoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/israelvieira/repository/PagamentoRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/israelvieira/modelo/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/israelvieira/modelo/Emprestimo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/israelvieira/builder/EmprestimoBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/israelvieira/builder/EmprestimoBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/com/israelvieira/repository/EmprestimoRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/israelvieira/repository/EmprestimoRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/israelvieira/modelo/Emprestimo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/israelvieira/modelo/Emprestimo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/israelvieira/builder/EmprestimoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/com/israelvieira/builder/EmprestimoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/israelvieira/repository/EmprestimoRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/com/israelvieira/repository/EmprestimoRepositoryTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -51,7 +60,22 @@
       <recent name="C:\Users\Suporte\Desktop\emprestimolivros\src\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EmprestimoRepositoryTest.deveTrazerListaComLivrosAtrasados">
+  <component name="RunManager" selected="JUnit.PagamentoRepositoryTest.deveSalvarUmNovoPagamento">
+    <configuration name="EmprestimoRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="emprestimolivros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.israelvieira.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
+      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.EmprestimoRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EmprestimoRepositoryTest.deveTrazerListaComLivrosAtrasados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="emprestimolivros" />
       <extension name="coverage">
@@ -84,38 +108,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LivroRepositoryTest.deveAlterarUmLivro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="emprestimolivros" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.israelvieira.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
-      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.LivroRepositoryTest" />
-      <option name="METHOD_NAME" value="deveAlterarUmLivro" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LivroRepositoryTest.deveEncontrarLivroPeloTitulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="emprestimolivros" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.israelvieira.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
-      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.LivroRepositoryTest" />
-      <option name="METHOD_NAME" value="deveEncontrarLivroPeloTitulo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LivroRepositoryTest.deveRetornarHistoricoEmprestimos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="emprestimolivros" />
       <extension name="coverage">
@@ -132,13 +124,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PagamentoRepositoryTest.deveSalvarUmNovoPagamento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="emprestimolivros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.israelvieira.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.israelvieira.repository" />
+      <option name="MAIN_CLASS_NAME" value="br.com.israelvieira.repository.PagamentoRepositoryTest" />
+      <option name="METHOD_NAME" value="deveSalvarUmNovoPagamento" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PagamentoRepositoryTest.deveSalvarUmNovoPagamento" />
         <item itemvalue="JUnit.EmprestimoRepositoryTest.deveTrazerListaComLivrosAtrasados" />
+        <item itemvalue="JUnit.EmprestimoRepositoryTest" />
         <item itemvalue="JUnit.EmprestimoRepositoryTest.deveTrazerListaComLivrosEmprestados" />
         <item itemvalue="JUnit.LivroRepositoryTest.deveRetornarHistoricoEmprestimos" />
-        <item itemvalue="JUnit.LivroRepositoryTest.deveAlterarUmLivro" />
-        <item itemvalue="JUnit.LivroRepositoryTest.deveEncontrarLivroPeloTitulo" />
       </list>
     </recent_temporary>
   </component>
@@ -168,25 +176,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="56" key="#com.intellij.ide.util.MemberChooser" timestamp="1575682682711">
+    <state x="488" y="56" key="#com.intellij.ide.util.MemberChooser" timestamp="1575841644606">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="56" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1575682682711" />
-    <state width="1323" height="189" key="GridCell.Tab.0.bottom" timestamp="1575838240618">
+    <state x="488" y="56" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1575841644606" />
+    <state width="1323" height="189" key="GridCell.Tab.0.bottom" timestamp="1575841969703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
-    <state width="1323" height="189" key="GridCell.Tab.0.center" timestamp="1575838240618">
+    <state width="1323" height="189" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575841969703" />
+    <state width="1323" height="189" key="GridCell.Tab.0.center" timestamp="1575841969703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
-    <state width="1323" height="189" key="GridCell.Tab.0.left" timestamp="1575838240618">
+    <state width="1323" height="189" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575841969703" />
+    <state width="1323" height="189" key="GridCell.Tab.0.left" timestamp="1575841969703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
-    <state width="1323" height="189" key="GridCell.Tab.0.right" timestamp="1575838240618">
+    <state width="1323" height="189" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575841969703" />
+    <state width="1323" height="189" key="GridCell.Tab.0.right" timestamp="1575841969703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575838240618" />
+    <state width="1323" height="189" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575841969703" />
   </component>
 </project>

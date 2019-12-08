@@ -63,11 +63,11 @@ public class EmprestimoRepositoryTest {
 
     @Test
     public void deveTrazerListaComLivrosAtrasados(){
-        Livro livro1 = LivroBuilder.umLivro().comTitulo("O Empréstimo").constroi();
-        Livro livro2 = LivroBuilder.umLivro().comTitulo("O Procurado").constroi();
+        Livro livro1 = LivroBuilder.umLivro().comTitulo("O Empréstimo").emprestimoAtrasadoUmDia().constroi();
+        Livro livro2 = LivroBuilder.umLivro().comTitulo("O Procurado").emprestimoAtrasadoUmDia().constroi();
 
         Emprestimo emprestimo1 = EmprestimoBuilder.umEmprestimo().comDataRetorno(LocalDate.now().minusDays(1)).comLivro(livro1).constroi();
-        Emprestimo emprestimo2 = EmprestimoBuilder.umEmprestimo().comDataRetorno(LocalDate.now().minusDays(2)).comLivro(livro2).constroi();
+        Emprestimo emprestimo2 = EmprestimoBuilder.umEmprestimo().comDataRetorno(LocalDate.now().minusDays(1)).comLivro(livro2).constroi();
 
         repositorioLivro.salva(livro1);
         repositorioLivro.salva(livro2);

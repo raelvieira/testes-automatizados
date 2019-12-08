@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 @Entity
 public class Emprestimo {
@@ -27,8 +28,15 @@ public class Emprestimo {
     @JoinColumn(name = "livro_fk")
     private Livro livroLocado;
 
-    @Column(name = "valor_pago")
-    private BigDecimal valorPago;
+    @Column(name = "valor_total")
+    private BigDecimal valorTotal;
+
+    @OneToMany
+    @JoinColumn(name = "emprestimo_fk")
+    private List<Pagamento> pagamento;
+
+    public Emprestimo() {
+    }
 
     public Emprestimo(Usuario usuario, Livro livroLocado) {
         this.usuario = usuario;
@@ -84,12 +92,20 @@ public class Emprestimo {
         this.livroLocado = livroLocado;
     }
 
-    public BigDecimal getValorPago() {
-        return valorPago;
+    public BigDecimal getValorTotal() {
+        return valorTotal;
     }
 
-    public void setValorPago(BigDecimal valorPago) {
-        this.valorPago = valorPago;
+    public void setValorTotal(BigDecimal valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public List<Pagamento> getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(List<Pagamento> pagamento) {
+        this.pagamento = pagamento;
     }
 
     public long getDiasEmAtraso() {
@@ -105,9 +121,9 @@ public class Emprestimo {
 		else
 			calculadora = new CalculadoraDePreco(new TabelaDePrecoPadrao());
 		
-		this.valorPago = calculadora.calcula(this.getDiasEmAtraso(), valorDoAluguel);
+		this.valorTotal = calculadora.calcula(this.getDiasEmAtraso(), valorDoAluguel);
 		
-		return this.valorPago;
+		return this.valorTotal;
 	}
 
 }
