@@ -1,10 +1,14 @@
 package br.com.israelvieira.service;
 
+import br.com.israelvieira.infra.Email;
 import br.com.israelvieira.modelo.Emprestimo;
 import br.com.israelvieira.modelo.Livro;
 import br.com.israelvieira.modelo.Usuario;
+import br.com.israelvieira.repository.EmprestimoRepository;
+import br.com.israelvieira.util.EMFactory;
 
 import javax.naming.LimitExceededException;
+import javax.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +16,19 @@ import java.util.List;
 public class EmprestimoService {
 
     private List<Emprestimo> listaFicticiaParaSimularBancoDeDados = new ArrayList<Emprestimo>();
+    private Email email;
+    private final EntityManager manager  = new EMFactory().getEntityManager();
+    private EmprestimoRepository repository;
+
+
+    public EmprestimoService(Email email, EmprestimoRepository repository) {
+        this.email = email;
+        this.repository = repository;
+    }
+
+    public EmprestimoService() {
+
+    }
 
     public Emprestimo emprestarLivro(Usuario usuario, Livro livro) throws LimitExceededException {
         if(livro.getEmprestado() || livro.getReservado())
@@ -39,6 +56,23 @@ public class EmprestimoService {
         });
 
         return emprestimosUsuario;
+    }
+
+
+    public List<Emprestimo> verificarEmprestimosAtrasados() {
+        List<Emprestimo> emprestimosAtrasados;
+        emprestimosAtrasados = repository.atrasadosParaDevolucao();
+
+        emprestimosAtrasados.forEach( (emprestimo) -> {
+           try{
+               email.envia(emprestimo);
+           }catch (Exception e) {
+               System.out.println("Salvo no log!");
+           }
+        }
+        );
+
+        return emprestimosAtrasados;
     }
 
     public void inicializaListaParaUmEmprestimo(Livro livro) {

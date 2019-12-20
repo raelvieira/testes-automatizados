@@ -1,9 +1,12 @@
 package br.com.israelvieira.service;
 
+import br.com.israelvieira.builder.EmprestimoBuilder;
 import br.com.israelvieira.builder.LivroBuilder;
+import br.com.israelvieira.infra.Email;
 import br.com.israelvieira.modelo.Emprestimo;
 import br.com.israelvieira.modelo.Livro;
 import br.com.israelvieira.modelo.Usuario;
+import br.com.israelvieira.repository.EmprestimoRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,12 +14,14 @@ import org.junit.jupiter.api.Test;
 import javax.naming.LimitExceededException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.Mockito.*;
 
 class EmprestimoServiceTest {
     private EmprestimoService emprestimoService;
@@ -26,6 +31,40 @@ class EmprestimoServiceTest {
     public void setup() {
         emprestimoService = new EmprestimoService();
         usuario = new Usuario("Fulado de tal", "M40E");
+    }
+
+    @Test
+    public void deveRetornarEmprestimosAtrasados() {
+        Emprestimo emprestimo1 = EmprestimoBuilder.umEmprestimo().emAtraso().constroi();
+        Emprestimo emprestimo2 = EmprestimoBuilder.umEmprestimo().emAtraso().constroi();
+
+        EmprestimoRepository repositoryFalso = mock(EmprestimoRepository.class);
+        Email emailFalso = mock(Email.class);
+
+        when(repositoryFalso.atrasadosParaDevolucao()).thenReturn(Arrays.asList(emprestimo1, emprestimo2));
+
+        EmprestimoService service = new EmprestimoService(emailFalso, repositoryFalso);
+        List<Emprestimo> emprestimos = service.verificarEmprestimosAtrasados();
+
+        Assertions.assertNotNull(emprestimos);
+        Assertions.assertEquals(2, emprestimos.size());
+    }
+
+    @Test
+    public void deveContinuarEnviarEmailMesmoComException() {
+        Emprestimo emprestimo1 = EmprestimoBuilder.umEmprestimo().emAtraso().constroi();
+        Emprestimo emprestimo2 = EmprestimoBuilder.umEmprestimo().emAtraso().constroi();
+
+        EmprestimoRepository repositoryFalso = mock(EmprestimoRepository.class);
+        Email emailFalso = mock(Email.class);
+
+        when(repositoryFalso.atrasadosParaDevolucao()).thenReturn(Arrays.asList(emprestimo1, emprestimo2));
+        doThrow(new RuntimeException()).when(emailFalso).envia(emprestimo1);
+
+        EmprestimoService service = new EmprestimoService(emailFalso, repositoryFalso);
+        service.verificarEmprestimosAtrasados();
+
+        verify(emailFalso, times(1)).envia(emprestimo2);
     }
 
     @Test
